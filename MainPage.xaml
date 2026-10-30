@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiSpreadsheet.MainPage"
+             Title="Електронна таблиця">
+
+    <Grid RowDefinitions="Auto, *">
+        <!-- Панель інструментів (без горизонтального скролу, щоб не блокувати кліки) -->
+        <HorizontalStackLayout Grid.Row="0" Spacing="8" Padding="10" BackgroundColor="#F3F4F6">
+            <Button Text="Зберегти" Clicked="btnSave_Click" />
+            <Button Text="Завантажити" Clicked="btnLoad_Click" />
+            <Button Text="+ Рядок" Clicked="btnAddRow_Click" />
+            <Button Text="- Рядок" Clicked="btnDeleteRow_Click" />
+            <Button Text="Обчислити" Clicked="btnCalculate_Click" BackgroundColor="#6200EE" TextColor="White" />
+            <Button Text="Вираз / Значення" Clicked="btnToggleMode_Click" />
+            <Button Text="Довідка" Clicked="btnHelp_Click" />
+        </HorizontalStackLayout>
+
+        <!-- Область таблиці -->
+        <ScrollView Grid.Row="1" Orientation="Vertical" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <ScrollView Orientation="Horizontal" HorizontalOptions="Fill" VerticalOptions="Fill">
+                <VerticalStackLayout x:Name="TableContainer" Padding="15" Spacing="1" BackgroundColor="#CCCCCC" />
+            </ScrollView>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
