@@ -48,7 +48,6 @@ public class SpreadsheetManager
         return cell;
     }
 
-    // Обчислення всіх виразів у таблиці[cite: 5, 6]
     public void EvaluateAll()
     {
         foreach (var cell in cells.Values)

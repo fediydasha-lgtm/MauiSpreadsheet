@@ -1,9 +1,7 @@
 grammar Calculator;
 
-// Головне правило - вираз, який закінчується кінцем файлу
 compileUnit: expr EOF;
 
-// Правила для виразів (пріоритет операцій іде зверху вниз)
 expr: NUMBER                                               # NumberExpr
     | ID                                                   # IdentifierExpr
     | '(' expr ')'                                         # ParenthesesExpr
@@ -14,7 +12,6 @@ expr: NUMBER                                               # NumberExpr
     | left=expr operator=('+' | '-') right=expr            # AdditiveExpr
     ;
 
-// Лексичні правила
-NUMBER: [0-9]+ ;                     // Цілі числа (для BigInteger)
-ID:     [A-Za-z]+[0-9]+ ;            // Назви клітинок (наприклад, A1, B25)
+NUMBER: [0-9]+ ;                     // Цілі числа 
+ID:     [A-Za-z]+[0-9]+ ;            // Назви клітинок 
 WS:     [ \t\r\n]+ -> skip ;         // Ігнорування пробілів

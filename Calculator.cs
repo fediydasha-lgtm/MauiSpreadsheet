@@ -10,7 +10,6 @@ public class Calculator
     {
         if (string.IsNullOrWhiteSpace(expression)) return 0;
 
-        // Если введен просто текст или число без знака равенства, пытаемся распарсить как выражение
         string input = expression.StartsWith("=") ? expression.Substring(1) : expression;
 
         var inputStream = new AntlrInputStream(input);
